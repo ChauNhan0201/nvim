@@ -4,11 +4,11 @@ print('Hello Gumusservi')
 local config_path = vim.fn.stdpath('config')
 
 -- Cài đặt cơ bản
-require('gumusservi.options')    -- Tùy chọn cơ bản
-require('gumusservi.keymaps')    -- Phím tắt
-require('gumusservi.plugins')    -- Cài đặt plugins (Packer)
+require('gumusservi.options')     -- Tùy chọn cơ bản
+require('gumusservi.keymaps')     -- Phím tắt
+require('gumusservi.plugins')     -- Cài đặt plugins (Packer)
 require('gumusservi.colorscheme') -- Cài đặt theme
-require('gumusservi.lsp')        -- Cài đặt LSP (lsp-zero)
+require('gumusservi.lsp')         -- Cài đặt LSP (lsp-zero)
 
 -- Tự động cài đặt Packer nếu chưa có
 local ensure_packer = function()
