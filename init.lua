@@ -46,4 +46,4 @@ require('nvim-tree').setup({
   },
 })
 
-print("Neovim đã được khởi động với cấu hình của bạn!")
+--print("Neovim đã được khởi động với cấu hình của bạn!")

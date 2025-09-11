@@ -20,10 +20,10 @@ keymap("n", "<leader>j", ":wincmd j<CR>", { noremap = true })
 keymap("n", "<leader>k", ":wincmd k<CR>", { noremap = true })
 
 -- Điều chỉnh kích thước cửa sổ
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)           -- Giảm chiều cao
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)         -- Tăng chiều cao
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts) -- Giảm chiều rộng
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts) -- Tăng chiều rộng
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)               -- Giảm chiều cao
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)             -- Tăng chiều cao
+keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)    -- Tăng chiều rộng
+keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)   -- Giảm chiều rộng
 
 -- Điều hướng buffer
 keymap("n", "<S-l>", ":bnext<CR>", opts)                -- Chuyển đến buffer tiếp theo
@@ -34,8 +34,8 @@ keymap("n", "<leader>w", ":NvimTreeFindFile<CR>")
 keymap("n", "<leader>c", ":bdelete<CR>", opts)          -- Đóng buffer
 
 -- Tìm kiếm
-keymap("n", "<leader>p", "<cmd>Telescope find_files<CR>", opts) -- Tìm files
-keymap("n", "<leader>sg", "<cmd>Telescope live_grep<CR>", opts)  -- Tìm text
+keymap("n", "<leader>p", "<cmd>Telescope find_files<CR>", opts)   -- Tìm files
+keymap("n", "<leader>sg", "<cmd>Telescope live_grep<CR>", opts)   -- Tìm text
 
 -- Insert mode --
 -- Thoát nhanh từ insert mode
@@ -82,6 +82,11 @@ keymap("n", "<leader>d", function()
     close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
   })
 end, opts)
+
+-- Phím tắt comment
+vim.keymap.set('n', '<leader>/', ':CommentToggle<CR>', vim.tbl_extend('force', opts, { desc = 'Toggle comment' }))
+
+vim.keymap.set('v', '<leader>/', ':CommentToggle<CR>', vim.tbl_extend('force', opts, { desc = 'Toggle comment' }))
 
 -- Phím tắt để hiển thị tất cả diagnostics của buffer hiện tại
 keymap("n", "<leader>D", function()

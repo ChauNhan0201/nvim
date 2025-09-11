@@ -86,16 +86,19 @@ return packer.startup(function(use)
     run = ':TSUpdate'
   })
 
-  -- Lazygit in Nvim
-  use({
-    "kdheepak/lazygit.nvim",
-    -- optional for floating window border decoration
-    requires = {
-        "nvim-lua/plenary.nvim",
-    },
-  })
+  -- nvim-comment
+  use {
+    'terrortylor/nvim-comment',
+    config = function()
+      require('nvim_comment').setup({
+        create_mappings = false, -- tắt default mappings
+        comment_empty = false,
+        comment_padding = ' ',
+      })
+    end
+  }
 
-  -- Hỗ trợ Java
+    -- Hỗ trợ Java
   use('mfussenegger/nvim-jdtls')  -- Java Language Server
   use('simaxme/java.nvim')  -- Java move and rename files
 
