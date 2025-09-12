@@ -80,6 +80,17 @@ return packer.startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   })
 
+  -- Sẽ config thêm nếu sau này thật sự cần
+  -- Flash.nvim to find and navigation
+  -- use {
+  --   "folke/flash.nvim",
+  --   event = "VeryLazy", -- Load khi cần thiết
+  --   config = function()
+  --     require("gumusservi.flash") -- Load config file
+  --   end
+  -- }
+
+
   -- Treesitter
   use({
     'nvim-treesitter/nvim-treesitter',

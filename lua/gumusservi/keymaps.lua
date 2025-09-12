@@ -37,6 +37,12 @@ keymap("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show error in curr
 -- Tìm kiếm
 keymap("n", "<leader>p", "<cmd>Telescope find_files<CR>", opts)   -- Tìm files
 keymap("n", "<leader>sg", "<cmd>Telescope live_grep<CR>", opts)   -- Tìm text
+keymap('n', '<leader>f', function()
+    require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        winblend = 10,
+        previewer = false,
+    })
+end, { desc = '[/] Fuzzily search in current buffer' })
 
 -- Insert mode --
 -- Thoát nhanh từ insert mode
