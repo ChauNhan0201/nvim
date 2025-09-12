@@ -32,6 +32,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)            -- Chuyển đến buffe
 -- Phím tắt hữu ích
 keymap("n", "<leader>w", ":NvimTreeFindFile<CR>")
 keymap("n", "<leader>c", ":bdelete<CR>", opts)          -- Đóng buffer
+keymap("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show error in current line" })
 
 -- Tìm kiếm
 keymap("n", "<leader>p", "<cmd>Telescope find_files<CR>", opts)   -- Tìm files

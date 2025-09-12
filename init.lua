@@ -9,7 +9,7 @@ require('gumusservi.keymaps')     -- Phím tắt
 require('gumusservi.plugins')     -- Cài đặt plugins (Packer)
 require('gumusservi.colorscheme') -- Cài đặt theme
 require('gumusservi.lsp')         -- Cài đặt LSP (lsp-zero)
-
+-- require('gumusservi.autopairs')   -- Setup autopairs
 -- Tự động cài đặt Packer nếu chưa có
 local ensure_packer = function()
   local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
@@ -45,5 +45,3 @@ require('nvim-tree').setup({
     dotfiles = false,
   },
 })
-
---print("Neovim đã được khởi động với cấu hình của bạn!")

@@ -98,7 +98,7 @@ return packer.startup(function(use)
     end
   }
 
-    -- Hỗ trợ Java
+  -- Hỗ trợ Java
   use('mfussenegger/nvim-jdtls')  -- Java Language Server
   use('simaxme/java.nvim')  -- Java move and rename files
 
@@ -109,6 +109,15 @@ return packer.startup(function(use)
       'nvim-tree/nvim-web-devicons',
     },
   })
+
+  -- Tự động complete đóng ngoặc
+  use {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+        require("nvim-autopairs").setup {}
+    end
+  }
 
   -- Hiển thị status line đẹp hơn
   use({
