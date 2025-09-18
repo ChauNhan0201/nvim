@@ -66,7 +66,7 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)       -- Di chuyển block xu�
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)       -- Di chuyển block lên
 
 -- LazyGit --
-vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
+-- vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
 
 -- Phím tắt để bật/tắt diagnostic
 -- local diagnostics_active = true
@@ -167,7 +167,7 @@ vim.cmd "autocmd! TermOpen term://* lua set_terminal_keymaps()"
 require("toggleterm").setup{
     direction = "horizontal",
     size = 15,
-    open_mapping = [[<M-d>]]
+    open_mapping = [[<C-d>]]
 }
 
 -- Disable <Space>jk keymap in insert mode
