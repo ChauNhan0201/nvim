@@ -45,6 +45,17 @@ return packer.startup(function(use)
   -- Colorscheme
   use("ellisonleao/gruvbox.nvim")
 
+  -- use({
+  --   'projekt0n/github-nvim-theme',
+  --   config = function()
+  --     require('github-theme').setup({
+  --       -- ...
+  --     })
+
+  --     vim.cmd('colorscheme github_dark_high_contrast')
+  --   end
+  -- })
+
   -- cmp plugins (Hoàn thành code)
   use('hrsh7th/nvim-cmp')           -- Plugin hoàn thành
   use('hrsh7th/cmp-buffer')         -- Nguồn buffer cho cmp
@@ -73,6 +84,11 @@ return packer.startup(function(use)
       {'L3MON4D3/LuaSnip'},
     }
   })
+
+  -- Debug Adapter Protocol
+  use ('mfussenegger/nvim-dap')
+  -- use ('rcarriga/nvim-dap-ui')
+  -- use ('theHamsta/nvim-dap-virtual-text')
 
   -- Telescope
   use({
@@ -128,6 +144,11 @@ return packer.startup(function(use)
     config = function()
         require("nvim-autopairs").setup {}
     end
+  }
+
+  -- Cấu hình git in nvim
+  use {
+    'lewis6991/gitsigns.nvim'
   }
 
   -- Hiển thị status line đẹp hơn

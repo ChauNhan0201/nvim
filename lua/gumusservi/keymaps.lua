@@ -20,8 +20,8 @@ keymap("n", "<leader>j", ":wincmd j<CR>", { noremap = true })
 keymap("n", "<leader>k", ":wincmd k<CR>", { noremap = true })
 
 -- Điều chỉnh kích thước cửa sổ
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)               -- Giảm chiều cao
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)             -- Tăng chiều cao
+keymap("n", "<C-Up>", ":resize +2<CR>", opts)               -- Giảm chiều cao
+keymap("n", "<C-Down>", ":resize -2<CR>", opts)             -- Tăng chiều cao
 keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)    -- Tăng chiều rộng
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)   -- Giảm chiều rộng
 
@@ -69,17 +69,17 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)       -- Di chuyển block lê
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
 
 -- Phím tắt để bật/tắt diagnostic
-local diagnostics_active = true
-keymap("n", "<leader>td", function()
-  diagnostics_active = not diagnostics_active
-  if diagnostics_active then
-    vim.diagnostic.enable()
-    vim.notify("Diagnostics đã được bật", vim.log.levels.INFO)
-  else
-    vim.diagnostic.disable()
-    vim.notify("Diagnostics đã được tắt", vim.log.levels.INFO)
-  end
-end, opts)
+-- local diagnostics_active = true
+-- keymap("n", "<leader>td", function()
+--   diagnostics_active = not diagnostics_active
+--   if diagnostics_active then
+--     vim.diagnostic.enable()
+--     vim.notify("Diagnostics đã được bật", vim.log.levels.INFO)
+--   else
+--     vim.diagnostic.disable()
+--     vim.notify("Diagnostics đã được tắt", vim.log.levels.INFO)
+--   end
+-- end, opts)
 
 -- Phím tắt để hiển thị diagnostics trong floating window
 keymap("n", "<leader>d", function()
@@ -94,6 +94,11 @@ end, opts)
 vim.keymap.set('n', '<leader>/', ':CommentToggle<CR>', vim.tbl_extend('force', opts, { desc = 'Toggle comment' }))
 
 vim.keymap.set('v', '<leader>/', ':CommentToggle<CR>', vim.tbl_extend('force', opts, { desc = 'Toggle comment' }))
+
+-- Phím tắt debug
+-- vim.keymap.set('n', '<leader>dc', '<cmd>lua require"jdtls".test_class()<cr>')
+-- vim.keymap.set('n', '<leader>dm', '<cmd>lua require"jdtls".test_nearest_method()<cr>')
+
 
 -- Config completion code
 local cmp_status, cmp = pcall(require, "cmp")

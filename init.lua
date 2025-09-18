@@ -9,8 +9,12 @@ require('gumusservi.keymaps')     -- Phím tắt
 require('gumusservi.plugins')     -- Cài đặt plugins (Packer)
 require('gumusservi.colorscheme') -- Cài đặt theme
 require('gumusservi.lsp')         -- Cài đặt LSP (lsp-zero)
+require('gumusservi.gitsigns')    -- Cài đặt Gitsigns
+-- require('gumusservi.dap')         -- Cài đặt LSP (lsp-zero)
 -- require('gumusservi.autopairs')   -- Setup autopairs
 -- Tự động cài đặt Packer nếu chưa có
+-- Ẩn statusline
+vim.opt.laststatus = 0
 local ensure_packer = function()
   local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
